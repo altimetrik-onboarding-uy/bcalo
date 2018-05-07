@@ -299,4 +299,12 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>To_Do_must_have_Due_Date</fullName>
+        <active>true</active>
+        <description>This validation rule ensure that To-Do Task record type has a Due Date assigned</description>
+        <errorConditionFormula>AND(CONTAINS(RecordType.Name,&quot;TO-DO&quot;),ISNULL(Due_Date__c ))</errorConditionFormula>
+        <errorDisplayField>Due_Date__c</errorDisplayField>
+        <errorMessage>Due Date must be populated for TO-DO tasks.</errorMessage>
+    </validationRules>
 </CustomObject>
