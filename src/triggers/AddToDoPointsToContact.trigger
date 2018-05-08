@@ -1,6 +1,6 @@
 trigger AddToDoPointsToContact on Task__c (before insert, before update) {
+    
     List<Contact> toUpdate = new List<Contact>();
-    //Id toDoId = Schema.SObjectType.Task__c.getRecordTypeInfosByName().get('TO-DO').getRecordTypeId();
     Id toDoId = [Select Id from RecordType where SobjectType='Task__c' and DeveloperName='TO_DO'].Id;
     for(Task__c task : Trigger.New) {
         if(task.RecordTypeId == toDoId && task.Status__c == 'Completed') {
