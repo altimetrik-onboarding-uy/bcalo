@@ -5,11 +5,20 @@
         <members>DailyContactPointsAssignment</members>
         <members>DailyTaskCalculation</members>
         <members>DailyTaskCalculationTest</members>
+        <members>TaskListController</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>AddToDoPointsToContact</members>
         <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>HabitTask</members>
+        <members>TaskBoard</members>
+        <members>TaskList</members>
+        <members>TaskUpdateEvent</members>
+        <members>TaskWithStatus</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>Contact</members>

@@ -1,0 +1,19 @@
+<aura:component >
+	<aura:attribute name="task" type="Task__c"
+                    default="{
+                        'sobjectType': 'Task__c',
+                        'Name': 'Task Test',
+                        'Status__c': 'Completed'
+                    }"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+        <lightning:card title="{!v.task.Name}" iconName="standard:task">
+            <div class="slds-grid slds-grid_align-center slds-gutters">
+                <div class="slds-col">
+                    <lightning:button iconName="utility:add" label="Button"/>
+                </div>
+                <div class="slds-col">
+                    <lightning:button iconName="utility:dash" label="Button"/>
+                </div>
+            </div>
+       </lightning:card>
+</aura:component>

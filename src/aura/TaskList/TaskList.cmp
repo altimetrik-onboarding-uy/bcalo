@@ -1,0 +1,28 @@
+<aura:component controller="TaskListController">
+	<aura:attribute name="recordId" type="Id" default="0036A00000TuvVdQAJ"/>
+	<aura:attribute name="tasks" type="Task__c[]"/>
+	<aura:attribute name="taskType" type="String"/>
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+	<aura:handler name="updateTask" event="c:TaskUpdateEvent" action="{!c.handleUpdateTask}"/>
+	<lightning:notificationsLibrary aura:id="notification"/>
+
+	<div class="background">
+        <div class="page-header slds-align_absolute-center">
+		   <div class="slds-text-heading--label">
+		       <h1 class="slds-text-heading--label">{!v.taskType}</h1>
+		   </div>
+		</div>
+		<div class="slds-grid slds-grid_vertical">
+            <aura:iteration items="{!v.tasks}" var="t">
+				<div class="slds-col">
+					<aura:if isTrue="{! equals(v.taskType,'Habit')}">
+		                <c:HabitTask task="{!t}"/>
+	                    <aura:set attribute="else">
+			                <c:TaskWithStatus task="{!t}"/>
+	                    </aura:set>
+	                </aura:if>
+				</div>
+            </aura:iteration>
+		</div>
+	</div>
+</aura:component>
