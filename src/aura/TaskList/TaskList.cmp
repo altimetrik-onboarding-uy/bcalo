@@ -3,6 +3,7 @@
 	<aura:attribute name="tasks" type="Task__c[]"/>
 	<aura:attribute name="taskType" type="String"/>
 	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+	<aura:attribute name="statusValues" type="List" default="[]"/>
 	<aura:handler name="updateTask" event="c:TaskUpdateEvent" action="{!c.handleUpdateTask}"/>
 	<lightning:notificationsLibrary aura:id="notification"/>
 
@@ -12,13 +13,13 @@
 		       <h1 class="slds-text-heading--label">{!v.taskType}</h1>
 		   </div>
 		</div>
-		<div class="slds-grid slds-grid_vertical">
+		<div class="slds-grid slds-grid_vertical slds-m-top_medium">
             <aura:iteration items="{!v.tasks}" var="t">
-				<div class="slds-col">
+				<div class="slds-col slds-p-horizontal_small">
 					<aura:if isTrue="{! equals(v.taskType,'Habit')}">
 		                <c:HabitTask task="{!t}"/>
 	                    <aura:set attribute="else">
-			                <c:TaskWithStatus task="{!t}"/>
+			                <c:TaskWithStatus task="{!t}" options="{!v.statusValues}"/>
 	                    </aura:set>
 	                </aura:if>
 				</div>

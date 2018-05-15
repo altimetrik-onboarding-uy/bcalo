@@ -5,7 +5,9 @@
         <members>DailyContactPointsAssignment</members>
         <members>DailyTaskCalculation</members>
         <members>DailyTaskCalculationTest</members>
+        <members>HabitTaskController</members>
         <members>TaskListController</members>
+        <members>TaskWithStatusController</members>
         <name>ApexClass</name>
     </types>
     <types>

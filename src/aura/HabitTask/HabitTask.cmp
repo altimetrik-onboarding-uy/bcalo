@@ -1,18 +1,17 @@
-<aura:component >
+<aura:component controller="HabitTaskController">
 	<aura:attribute name="task" type="Task__c"
                     default="{
                         'sobjectType': 'Task__c',
                         'Name': 'Task Test',
                         'Status__c': 'Completed'
                     }"/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
         <lightning:card title="{!v.task.Name}" iconName="standard:task">
-            <div class="slds-grid slds-grid_align-center slds-gutters">
-                <div class="slds-col">
-                    <lightning:button iconName="utility:add" label="Button"/>
+            <div class="slds-grid slds-grid_align-center slds-m-top_x-large">
+                <div class="slds-col slds-p-horizontal_xxx-small">
+                    <lightning:button iconName="utility:add" label="Button" onclick="{!c.clickAddButton}"/>
                 </div>
-                <div class="slds-col">
-                    <lightning:button iconName="utility:dash" label="Button"/>
+                <div class="slds-col slds-p-horizontal_xxx-small">
+                    <lightning:button iconName="utility:dash" label="Button" onclick="{!c.clickSubtractButton}"/>
                 </div>
             </div>
        </lightning:card>

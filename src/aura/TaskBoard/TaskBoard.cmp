@@ -1,12 +1,12 @@
 <aura:component >
 	<div class="slds-grid">
-		<div class="slds-col">
+		<div class="slds-col slds-p-horizontal_medium list-style">
 			<c:TaskList taskType="TO-DO"/>
 		</div>
-		<div class="slds-col">
+		<div class="slds-col slds-p-horizontal_small list-style">
 			<c:TaskList taskType="Daily" />
 		</div>
-		<div class="slds-col">
+		<div class="slds-col slds-p-horizontal_medium list-style">
 			<c:TaskList taskType="Habit" />
 		</div>
 	</div>

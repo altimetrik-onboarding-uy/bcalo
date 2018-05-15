@@ -11,9 +11,10 @@
 			}
 		});
 		$A.enqueueAction(action);
+
+		helper.getStatusValues(component);
 	},
 	handleUpdateTask : function(component, event, helper) {
-
 		helper.updateTask(component,event.getParam("taskItem"));
 	}
 })
