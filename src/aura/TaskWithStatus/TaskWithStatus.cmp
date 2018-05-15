@@ -1,4 +1,4 @@
-<aura:component controller="TaskWithStatusController">
+<aura:component >
     <aura:attribute name="task" type="Task__c"
                     default="{
                         'sobjectType': 'Task__c',

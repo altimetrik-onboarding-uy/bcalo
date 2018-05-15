@@ -31,6 +31,7 @@
 			type: aType
 		});
 		toastEvent.fire();
+
 	}, getStatusValues : function(component) {
 		var action = component.get("c.getStatusFieldValues");
 		action.setCallback(this, function(response){
@@ -44,6 +45,19 @@
 					});
 				}
 				component.set("v.statusValues", options);
+			}
+		});
+		$A.enqueueAction(action);
+
+	}, getTasks : function(component) {
+		var action = component.get("c.getContactTaskByType");
+		action.setParams({
+			"contactId": component.get("v.recordId"),
+			"type": component.get("v.taskType")
+		});
+		action.setCallback(this, function(response) {
+			if(response.getState() === 'SUCCESS'){
+				component.set("v.tasks", response.getReturnValue());
 			}
 		});
 		$A.enqueueAction(action);
