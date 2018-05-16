@@ -1,5 +1,5 @@
-<aura:component controller="TaskListController">
-	<aura:attribute name="recordId" type="Id" default="0036A00000TuvVdQAJ"/>
+<aura:component implements="force:hasRecordId" controller="TaskListController">
+	<aura:attribute name="recordId" type="String"/>
 	<aura:attribute name="tasks" type="Task__c[]"/>
 	<aura:attribute name="taskType" type="String"/>
 	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>

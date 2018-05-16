@@ -6,7 +6,9 @@
         <members>DailyTaskCalculation</members>
         <members>DailyTaskCalculationTest</members>
         <members>HabitTaskController</members>
+        <members>HabitTaskControllerTest</members>
         <members>TaskListController</members>
+        <members>TaskListControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>

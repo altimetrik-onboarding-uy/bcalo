@@ -1,7 +1,7 @@
 public class HabitTaskController {
 
     @AuraEnabled
-    public static Task__c UpdateHabitTask(Task__c habit, Boolean achieved) {
+    public static Task__c updateHabitTask(Task__c habit, Boolean achieved) {
         Contact contact = [SELECT Id, Total_Earned_Points__c
                            FROM Contact
                            WHERE Id =: habit.Contact__c];

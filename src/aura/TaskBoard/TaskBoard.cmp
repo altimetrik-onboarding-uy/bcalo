@@ -1,4 +1,4 @@
-<aura:component >
+<aura:component implements="flexipage:availableForRecordHome" access="global">
 	<div class="slds-grid">
 		<div class="slds-col slds-p-horizontal_medium list-style">
 			<c:TaskList taskType="TO-DO"/>

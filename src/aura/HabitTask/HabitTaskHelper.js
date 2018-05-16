@@ -1,6 +1,6 @@
 ({
 	updateHabitTask : function(component, habit, achieved) {
-		var action = component.get("c.UpdateHabitTask");
+		var action = component.get("c.updateHabitTask");
 		action.setParams({
 			"habit": habit,
 			"achieved": achieved
