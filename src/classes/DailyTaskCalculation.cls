@@ -2,14 +2,12 @@ global class DailyTaskCalculation implements Database.Batchable<Contact> {
     private Id dailyRecordType = [SELECT Id 
                                   FROM RecordType 
                                   WHERE SobjectType='Task__c' and DeveloperName='Daily'].Id;
-    global Iterable<Contact> start(Database.BatchableContext bc) {
-       // Id dailyRecordType = [SELECT Id 
-       //                       FROM RecordType 
-       //                       WHERE SobjectType='Task__c' and DeveloperName='Daily'].Id;
-        Id habitRecordType = [SELECT Id 
+
+    private Id habitRecordType = [SELECT Id 
                               FROM RecordType 
                               WHERE SobjectType='Task__c' and DeveloperName = 'Habit'].Id;
 
+    global Iterable<Contact> start(Database.BatchableContext bc) {
         return [SELECT Id, Total_Earned_Points__c, (SELECT Id, Status__c, Points_Award__c, RecordTypeId 
                                                     FROM Tasks__r 
                                                     WHERE RecordTypeId =: dailyRecordType 
