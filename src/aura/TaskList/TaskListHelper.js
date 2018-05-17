@@ -4,7 +4,7 @@
 		action.setParams({
 			"task": aTask
 		});
-		console.log(aTask.Status__c)
+		
 		action.setCallback(this, function(response){
 			if(response.getState() === 'SUCCESS') {
 				if(aTask.Status__c === "Completed") {
@@ -14,15 +14,20 @@
 						taskList.splice(index,1);
 					}
 					component.set("v.tasks", taskList);
-				}
-				//this.displayMessage("Success!","Your task was updated.","success");
+					this.displayMessage("Congrats!","You have completed your task!","success");
+				} else {
+					this.displayMessage("Success!","Your task was updated.","success");
+				}	
 			} else {
-				//this.displayMessage("error","Something has gone wrong!","Unfortunately", "there was a problem updating the record.");
+				this.displayMessage("error","Something has gone wrong!","Unfortunately, there was a problem updating the record.");
 			}
+
 		});
 		$A.enqueueAction(action);
 
-	}, displayMessage : function(aTitle, aMessage, aType) {
+	},
+
+	displayMessage : function(aTitle, aMessage, aType) {
 		var toastEvent = $A.get("e.force:showToast");
 
 		toastEvent.setParams({
@@ -32,7 +37,9 @@
 		});
 		toastEvent.fire();
 
-	}, getStatusValues : function(component) {
+	},
+	
+	getStatusValues : function(component) {
 		var action = component.get("c.getStatusFieldValues");
 		action.setCallback(this, function(response){
 			if(response.getState() === 'SUCCESS') {
@@ -49,7 +56,9 @@
 		});
 		$A.enqueueAction(action);
 
-	}, getTasks : function(component) {
+	},
+	
+	getTasks : function(component) {
 		var action = component.get("c.getContactTaskByType");
 		action.setParams({
 			"contactId": component.get("v.recordId"),

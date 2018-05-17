@@ -2,20 +2,20 @@
 	<aura:attribute name="recordId" type="String"/>
 	<aura:attribute name="tasks" type="Task__c[]"/>
 	<aura:attribute name="taskType" type="String"/>
-	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
 	<aura:attribute name="statusValues" type="List" default="[]"/>
+	
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
 	<aura:handler name="updateTask" event="c:TaskUpdateEvent" action="{!c.handleUpdateTask}"/>
-	<lightning:notificationsLibrary aura:id="notification"/>
 
 	<div class="background">
-        <div class="page-header slds-align_absolute-center">
+        <div class="page-header slds-align_absolute-center slds-p-top_medium">
 		   <div class="slds-text-heading--label">
 		       <h1 class="slds-text-heading--label">{!v.taskType}</h1>
 		   </div>
 		</div>
 		<div class="slds-grid slds-grid_vertical slds-m-top_medium">
             <aura:iteration items="{!v.tasks}" var="t">
-				<div class="slds-col slds-p-horizontal_small">
+				<div class="slds-col slds-p-horizontal_small slds-p-vertical_xx-small">
 					<aura:if isTrue="{! equals(v.taskType,'Habit')}">
 		                <c:HabitTask task="{!t}"/>
 	                    <aura:set attribute="else">

@@ -1,14 +1,8 @@
 <aura:component >
-    <aura:attribute name="task" type="Task__c"
-                    default="{
-                        'sobjectType': 'Task__c',
-                        'Name': 'Task Test',
-                        'Status__c': 'Completed'
-                    }"/>
+    <aura:attribute name="task" type="Task__c"/>
     <aura:attribute name="options" type="List" default="[]"/>
     <aura:registerEvent name="updateTask" type="c:TaskUpdateEvent"/>
 
-  
     <lightning:card title="{!v.task.Name}" iconName="standard:task">
         <div class="slds-grid slds-grid_align-center">
             <div class="slds-col slds-size--4-of-6 slds-p-horizontal_xxx-small">

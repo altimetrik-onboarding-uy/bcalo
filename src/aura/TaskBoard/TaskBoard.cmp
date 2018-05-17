@@ -1,13 +1,13 @@
-<aura:component implements="flexipage:availableForRecordHome" access="global">
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
 	<div class="slds-grid">
-		<div class="slds-col slds-p-horizontal_medium list-style">
-			<c:TaskList taskType="TO-DO"/>
+		<div class="slds-col slds-size_1-of-3 slds-p-horizontal_x-small">
+			<c:TaskList taskType="TO-DO" recordId="{!v.recordId}"/>
 		</div>
-		<div class="slds-col slds-p-horizontal_small list-style">
-			<c:TaskList taskType="Daily" />
+		<div class="slds-col slds-size_1-of-3 slds-p-horizontal_x-small">
+			<c:TaskList taskType="Daily" recordId="{!v.recordId}"/>
 		</div>
-		<div class="slds-col slds-p-horizontal_medium list-style">
-			<c:TaskList taskType="Habit" />
+		<div class="slds-col slds-size_1-of-3 slds-p-horizontal_xx-small">
+			<c:TaskList taskType="Habit" recordId="{!v.recordId}" />
 		</div>
 	</div>
 </aura:component>
