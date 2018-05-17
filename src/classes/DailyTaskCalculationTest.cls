@@ -30,14 +30,14 @@ public class DailyTaskCalculationTest {
         Contact contactResult = [SELECT Id, Total_Earned_Points__c FROM Contact LIMIT 1];
         System.assertEquals(20.0, contactResult.Total_Earned_Points__c);
 
-        List<Task__c> dailyMovedToNew = [SELECT Id FROM Task__c WHERE Status__c = 'New' AND RecordTypeId =: dailyRecordType];
-        System.assertEquals(20, dailyMovedToNew.size());
+        List<Task__c> dailyMovedToNew = [SELECT Id FROM Task__c WHERE Status__c = 'New'];
+        System.assertEquals(30, dailyMovedToNew.size());
 
-        List<Task__c> toDoKeptInProgress = [SELECT Id FROM Task__c WHERE Status__c = 'In Progress' AND RecordTypeId =: toDoRecordType];
+        List<Task__c> toDoKeptInProgress = [SELECT Id FROM Task__c WHERE Status__c = 'In Progress'];
         System.assertEquals(10,toDoKeptInProgress.size());
 
-        List<Task__c> habitNotUpdated = [SELECT Id FROM Task__c WHERE Status__c= 'Completed' AND RecordTypeId =: habitRecordType];
-        System.assertEquals(10,habitNotUpdated.size());
+        List<Task__c> habitNotUpdated = [SELECT Id FROM Task__c WHERE Status__c= 'Completed'];
+        System.assertEquals(0,habitNotUpdated.size());
     }
 
 }

@@ -1,0 +1,22 @@
+<aura:component >
+    <aura:attribute name="task" type="Task__c"/>
+    <aura:attribute name="options" type="List" default="[]"/>
+    <aura:registerEvent name="updateTask" type="c:TaskUpdateEvent"/>
+
+    <lightning:card title="{!v.task.Name}" iconName="standard:task">
+        <div class="slds-grid slds-grid_align-center">
+            <div class="slds-col slds-size--4-of-6 slds-p-horizontal_xxx-small">
+                <lightning:select aura:id="statusSelect" name="statusSelect" 
+                                  label="Status"
+                                  value="{!v.task.Status__c}">
+                    <aura:iteration items="{!v.options}" var="o">
+                        <option text="{!o.label}" value="{!o.value}"/>
+                    </aura:iteration>
+                 </lightning:select>
+            </div>
+            <div class="slds-col slds-align-bottom slds-p-horizontal_xxx-small">
+                <lightning:buttonIcon iconName="utility:check" alternativeText="Update Status" onclick="{!c.updateTask}" />
+            </div> 
+        </div>
+    </lightning:card>
+</aura:component>
