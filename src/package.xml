@@ -28,5 +28,9 @@
         <members>Task__c</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>unfiled$public/Daily_Email_Template</members>
+        <name>EmailTemplate</name>
+    </types>
     <version>36.0</version>
 </Package>

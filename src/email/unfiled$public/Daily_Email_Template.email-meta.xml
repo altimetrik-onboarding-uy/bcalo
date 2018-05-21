@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Daily Email Template</name>
+    <style>none</style>
+    <subject>Uncompleted Daily Tasks</subject>
+    <textOnly>Dear {!Contact.Name},
+You were not able to complete {!taskAmount} Daily Task/s by the end of the day.
+
+Thanks,
+Habitica Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>
