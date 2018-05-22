@@ -38,9 +38,10 @@ global class DailyTaskCalculation implements Database.Batchable<Contact>, Databa
                 task.Status__c = 'New';
                 taskToUpdate.add(task);
             }
-            if(dailyUncompleted > 0) {
+            if(contact.Email != null && dailyUncompleted > 0) {
                 contactsToNotify.put(contact, dailyUncompleted);
             }
+
             contact.Total_Earned_Points__c += pointsToAssign;
             contactToUpdate.add(contact);
         }
@@ -66,7 +67,11 @@ global class DailyTaskCalculation implements Database.Batchable<Contact>, Databa
             email.setPlainTextBody(body);
             emailsToSend.add(email);
         }
-        Messaging.sendEmail(emailsToSend);
+        
+        if(emailsToSend.size() > 0) {
+            Messaging.sendEmail(emailsToSend);
+        }
+        
     }
 
 }

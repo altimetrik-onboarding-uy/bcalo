@@ -1,7 +1,7 @@
 <aura:component controller="HabitTaskController">
     <aura:attribute name="task" type="Task__c"/>
     
-    <lightning:card title="{!v.task.Name}" iconName="standard:task">
+    <lightning:card class="card_element" title="{!v.task.Name}" iconName="standard:task">
         <div class="slds-grid slds-grid_align-center slds-m-top_x-large">
             <div class="slds-col slds-p-horizontal_xxx-small">
                 <lightning:button iconName="utility:add" label="Button" onclick="{!c.clickAddButton}"/>
