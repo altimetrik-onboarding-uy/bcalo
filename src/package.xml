@@ -3,6 +3,7 @@
     <types>
         <members>AddToDoPointsToContactTest</members>
         <members>DailyContactPointsAssignment</members>
+        <members>DailyContactPointsAssignmentTest</members>
         <members>DailyTaskCalculation</members>
         <members>DailyTaskCalculationTest</members>
         <members>HabitTaskController</members>
@@ -27,6 +28,10 @@
         <members>Contact</members>
         <members>Task__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>unfiled$public/Daily_Email_Template</members>
+        <name>EmailTemplate</name>
     </types>
     <version>36.0</version>
 </Package>

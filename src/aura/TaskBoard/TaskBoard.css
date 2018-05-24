@@ -2,3 +2,7 @@
     min-height: 500px;
 
 }
+
+.THIS .card_element .slds-card__header {
+    padding-left: 15px;
+}

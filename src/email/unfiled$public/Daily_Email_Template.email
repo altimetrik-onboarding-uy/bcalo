@@ -1,0 +1,8 @@
+<html>
+    <body>
+        <p>Dear {!Contact.Name},</p>
+            <p> You were not able to complete {!taskAmount} Daily Task/s by the end of the day.</p>
+            <p> Thanks,</p>
+            <p>Habitica Team</p>
+         </body>
+    </html>
