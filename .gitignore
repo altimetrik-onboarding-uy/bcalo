@@ -6,3 +6,4 @@ config/
 debug/
 Habitica.sublime-project
 force\.json
+.DS_Store
