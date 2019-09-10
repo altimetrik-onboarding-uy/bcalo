@@ -11,4 +11,5 @@ You were not able to complete {!taskAmount} Daily Task/s by the end of the day.
 Thanks,
 Habitica Team</textOnly>
     <type>custom</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>
